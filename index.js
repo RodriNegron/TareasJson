@@ -48,6 +48,16 @@ function listar(opcion) {
             console.log("Atencion - tienes que pasar una accion");
             break;
 
+        case "filtrar":
+            let filtro = process.argv[3];
+            if (filtro == "pendiente" || filtro == "realizado") {
+                let tareasFiltradas = archivoTareas.leerPorEstado(filtro);
+                console.log(tareasFiltradas)
+            } else {
+                console.log("no ingreso un filtro correcto")
+            }
+            break;
+
         default:
             console.log("No entiendo que quieres hacer");
     }

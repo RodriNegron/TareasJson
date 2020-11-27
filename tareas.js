@@ -17,7 +17,16 @@ const archivoTareas = {
         let arrayTareasJS=this.leerJson();  //leo archivo JSON y guardo en un array de objects JS
         arrayTareasJS.push(tarea); // pusheo la nueva tarea al array
         this.escribirEnJson(arrayTareasJS); //escribo el array con la nueva tarea en el archivo JSON llamando a la funcion escribirEnJson
-    }
+    },
+    leerPorEstado: function(estado){
+        let array=this.leerJson();
+        return array.filter(tarea => tarea.estado==estado);
+    },
+
+    filtrarPorEstado: function(){
+
+    } 
+    
 }
 
 module.exports= archivoTareas;
